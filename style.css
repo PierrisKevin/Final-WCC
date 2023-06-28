@@ -1,0 +1,560 @@
+:root{
+    --bg : #fff;
+    --primary : #ef1875;
+    --primary2 : #a01652;
+    --primary3 : #e81772;
+    --secondary : #ff8000;
+    --link : #777379;
+
+    --radiusValue : 7px;
+}
+*, body{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#home{
+    padding : 2.5% 4%;
+    width : 100%;
+    height : 100vh;
+}
+
+/* Les espace ou j'ai styliser la partie navBar du page  */
+#home .header-nav{
+    display: flex;
+    justify-content: space-between;
+}
+#home .header-nav .logo p{
+    position: relative;
+    font-weight: bold;
+    font-size: .9em;
+    text-transform: uppercase;
+    margin-left: 27px;
+}
+#home .header-nav .logo p::before, #home .header-nav .logo p::after{
+    content: "";
+    position: absolute;
+    width : 12px;
+    height: 12px;
+    background : var(--primary);
+    border-radius: 50%;
+}
+#home .header-nav .logo p::before{
+    left : -16px;
+    top : 15%;
+}
+#home .header-nav .logo p::after{
+    left : -26px;
+    top : 20%;
+    width : 8px;
+    height: 8px;
+    opacity: .4;
+}
+
+#home .header-nav .menu{
+    display: flex;
+    position: relative;
+}
+#home .header-nav .menu a{
+    font-size: .8em;
+    margin : 0 15px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color : var(--link);
+    transition: .4s;
+}
+#home .header-nav .menu a:hover{
+    color: var(--primary);
+}
+#home .header-nav .menu .login{
+    margin-top: -1.5%;
+    padding : 10px 30px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radiusValue);
+    color : var(--primary)
+}
+#home .header-nav .menu button{
+    display: none;
+    position: relative;
+    width : 24px;
+    height: 18px;
+    border: none;
+    background: none;
+}
+#home .header-nav .menu button span{
+    position: absolute;
+    right : 0;
+    width: 100%;
+    height: 3px;
+    background: var(--link);
+    transition: .4s;
+}
+#home .header-nav .menu button:focus span{
+    background: var(--primary);
+}
+#home .header-nav .menu button:hover span{
+    background: var(--primary);
+}
+#home .header-nav .menu button span:nth-child(1){
+    top : 0;
+}
+#home .header-nav .menu button span:nth-child(2){
+    top: 8px;
+}
+
+#home .header-nav .menu button span:nth-child(3){
+    bottom: 0;
+}
+
+/* Ce la fin du partie navBar  */
+
+/* debut du partie container et tout le decoratins  */
+
+#home #container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height : 100%;
+}
+#home #container .text{
+    position: relative;
+    width : 45%;
+}
+#home #container .text h1{
+    font-size: 4.5em;
+    color : var(--primary2);
+    animation: titleEnter 1.2s;
+}
+
+/* box personne signifie la petit boule au desus du grand titre  */
+
+#home #container .text .box-person, #home #container .images .img-center .box-perso{
+    position: absolute;
+    padding : 5px;
+    top : -30%;
+    left : 12%;
+    width : 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 8px 15px 15px rgba(0,0,0,.1);
+}
+#home #container .text .box-person::before{
+    content: "";
+    position: absolute;
+    left : -150%;
+    width : 7px;
+    height : 7px;
+    border-radius: var(--radiusValue);
+    background: var(--primary2);
+}#home #container .text .box-person::after{
+    content: "";
+    position: absolute;
+    top : -50%;
+    left : -220%;
+    width : 8px;
+    height : 8px;
+    border-radius: var(--radiusValue);
+    background: var(--secondary);
+}
+#home #container .text .box-person img, #home #container .images .img-center .box-perso img{
+    width : 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#home #container .text p{
+    margin : 15px 0 40px 0;
+    color : var(--link);
+    animation: paraEnter 1.4s;
+}
+
+/* la ce la partie option , (toujours dans le text avec les petit bouton) */
+#home #container .text .btn-options{
+    display: flex;
+    gap : 20px;
+}
+#home #container .text .btn-options a{
+    font-weight: bolder;
+    font-size: .8em;
+    text-decoration: none;
+    text-align: center;
+    padding : 10px 25px;
+    color : var(--bg);
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    border-radius: 5px;
+}
+#home #container .text .btn-options a:nth-child(2){
+    border: 1px solid var(--primary);
+    color : var(--primary);
+    background: none;
+}
+#home #container .text .btn-options a:nth-child(2) i{
+    margin-right : 5px;
+}
+
+/* fin du petit bouton  */
+
+
+/* La il y a tout les style convernant l'image a montrer a drotite avec ces box autour  */
+#home #container .images{
+    display: flex;
+    width : 55%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#home #container .images .img-center{
+    position: relative;
+    width : 42%;
+    height : 65%;
+    border-radius: var(--radiusValue);
+}
+#home #container .images .img-center img{
+    width : 100%;
+    height : 100%;
+    border-radius: var(--radiusValue);
+    object-fit: cover;
+}
+#home #container .images .img-center .overlay{
+    position: absolute;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+    background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.1));
+}
+#home #container .images .img-center .info-contain{
+    position: absolute;
+    text-align: center;
+    width : 100%;
+    bottom : 8%;
+}
+#home #container .images .img-center .info-contain h2{
+    font-size: 1.2em;
+    color : var(--bg);
+    line-height: 30px;
+}
+#home #container .images .img-center .info-contain p{
+    font-size: .6em;
+    color : var(--link);
+}
+#home #container .images .img-center .box-call{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.2% 6%;
+    width : 45%;
+    height : 42%;
+    background: var(--bg);
+    border-radius: var(--radiusValue);
+    box-shadow: 5px 15px 20px rgba(0,0,0,.2);
+}
+#home #container .images .img-center .box-call .picture{
+    display: flex;
+    width : 100%;
+    height : 45%;
+    justify-content: center;
+    align-items: center;
+}
+#home #container .images .img-center .box-call .picture .img{
+    position: relative;
+    padding : 2px;
+    width : 55px;
+    height: 55px;
+    border: 1px solid #7e7e7e;
+    border-radius: 50%;
+}
+#home #container .images .img-center .box-call .picture .img img{
+    width : 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#home #container .images .img-center .box-call .picture .img::before{
+    content : "";
+    position: absolute;
+    top : 0;
+    left : -5px;
+    width : 6px;
+    height: 6px;
+    border : 2px solid var(--secondary);
+    border-radius: var(--radiusValue);
+}
+
+#home #container .images .img-center .box-call .desc{
+    text-align: center;
+    height : 40%;
+}
+#home #container .images .img-center .box-call .desc h1{
+    font-weight: bolder;
+    font-size: 1em;
+    color : var(--primary2)
+}
+#home #container .images .img-center .box-call .desc p{
+    margin: 5px 0;
+    text-transform: capitalize;
+    font-size: .7em;
+    color: var(--link);
+}
+#home #container .images .img-center .box-call .options{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    height : 15%;
+}
+#home #container .images .img-center .box-call .options a:nth-child(1){
+    color : var(--secondary)
+}
+#home #container .images .img-center .box-call .options a:nth-child(2){
+    color : var(--primary)
+}
+#home #container .images .img-center .box-call:nth-child(4){
+    bottom : -8%;
+    left : -35%;
+}
+#home #container .images .img-center .box-call:nth-child(5){
+    top : 5%;
+    right : -35%;
+    z-index: 2;
+}
+#home #container .images .img-center .box-call:nth-child(5) .loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#home #container .images .img-center .box-call:nth-child(5) .loader .loading{
+    position: relative;
+    width : 100%;
+    height: 10px;
+    background: #e4e4e4;
+    border-radius: 20px;
+}
+#home #container .images .img-center .box-call:nth-child(5) .loader .loading::before{
+    content : "";
+    position: absolute;
+    left : 0;
+    top : 0;
+    width : 60%;
+    height : 100%;
+    border-radius: 20px;
+    background: var(--primary);
+}
+#home #container .images .img-center .box-call:nth-child(5) .loader p{
+    font-size: .55em;
+    margin: 8px 0;
+    color: var(--link);
+}
+
+#home #container .images .img-center .box-call:nth-child(5)::before{
+    content: "";
+    position: absolute;
+    top : 40%;
+    right : -40%;
+    width : 7px;
+    height : 7px;
+    background: var(--primary2);
+    border-radius: 5px;
+}
+
+#home #container .images .img-center .dialog{
+    position: absolute;
+    padding : 10px 20px;
+    font-size: .6em;
+    text-align: center;
+    top : 60%;
+    right : -30%;
+    width : 50%;
+    border-top-left-radius: 15px;
+    background: var(--bg);
+    color : var(--link);
+    box-shadow: 5px 15px 20px rgba(0,0,0,.2);
+}
+#home #container .images .img-center .contact-me{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    bottom : -12%;
+    left : 50%;
+    width : 50px;
+    height : 50px;
+    border-radius: 50%;
+    border: 4px solid var(--bg);
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+}
+#home #container .images .img-center .contact-me a{
+    font-size: .8em;
+    color : var(--bg);
+}
+#home #container .images .img-center .contact-me::before{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left : -15px;
+    width : 5px;
+    height : 5px;
+    border-radius: 2.5px;
+    background: var(--secondary);
+}
+#home #container .images .img-center .contact-me::after{
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    right : -30px;
+    width : 5px;
+    height : 5px;
+    border-radius: 2.5px;
+    background: var(--primary);
+}
+
+#home #container .images .img-center .box-perso{
+    top : 14%;
+    left : -42%;
+}
+#home #container .images .img-center .box-perso::before{
+    content : "";
+    position: absolute;
+    left : -45%;
+    width : 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 5px;
+}
+
+#home #container .images .img-center .stat-box{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap : 15px;
+    bottom : -20%;
+    right : -50%;
+    width : 42%;
+    height : 40%;
+
+}
+#home #container .images .img-center .stat-box .intro{
+    position: relative;
+    padding : 10% 12%; 
+    height : 25%;
+    border-radius: 12px 0 0 12px;
+    background: var(--primary);
+}
+#home #container .images .img-center .stat-box .intro p{
+    font-size: .7em;
+    color : var(--bg)
+}
+#home #container .images .img-center .stat-box .intro .image{
+    position: absolute;
+    padding : 4px;
+    top : -35%;
+    right : -16%;
+    width : 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: 8px 15px 15px rgba(0,0,0,.1);
+}
+#home #container .images .img-center .stat-box .intro .image img{
+    width : 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#home #container .images .img-center .stat-box .graph{
+    height: 80%;
+    border-radius: 12px 12px 0 12px;
+    background: var(--primary3);
+}
+
+
+/* Partie reposnivite  */
+
+@media (max-width : 1100px){
+    #home #container .images .img-center{
+        width : 50%;
+    }
+    #home #container .text h1{
+        font-size: 3.5em;
+    }
+}
+@media (max-width : 850px){
+    #home{
+        height: auto;
+    }
+    #home .header-nav .menu button{
+        display: inline-block;
+        z-index: 8;
+    }
+    #home .header-nav .menu .link-contain{
+        position: fixed;
+        right : 0;
+        top : 60px;
+        width : 80%;
+        height : 95vh;
+        transform: translateX(120%);
+        background: var(--bg);
+        border-radius: 20px 0 0 20px;
+        transition: .6s;
+        z-index: 8;
+    }
+    #home .header-nav .menu .link-contain a{
+        text-align: center;
+        display: block;
+        font-size: 1em;
+        margin : 15px 0;
+    }
+    #home #container .overlay-all{
+        display: none;
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height: 100vh;
+        background: rgba(0,0,0,.4);
+        z-index: 7;
+    }
+    #home #container .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width : 100%;
+        height: 80vh;
+    }
+    #home #container .images{
+        width : 80%;
+    }
+    #home #container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width : 450px){
+    #home #container .text h1{
+        font-size: 2.5em;
+    }
+    #home #container .images{
+        width : 100%;
+    }
+    #home #container .images .img-center{
+        width : 50%;
+    }
+    #home #container .images .img-center .box-call .picture .img{
+        width : 35px;
+        height: 35px;
+    }
+    #home #container .images .img-center .box-call .picture .img img{
+        width : 30px;
+        height: 30px;
+    }
+    #home #container .images .img-center .box-call .desc p{
+        font-size: .6em;
+    }
+    #home #container .images .img-center .stat-box .intro p{
+        font-size: .6em;
+    }
+}
